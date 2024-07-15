@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<head>
+</head>
+<style>
+            body {
+                font-family: Arial, sans-serif;
+                margin: 0;
+                padding: 0;
+                background-color: #f4f4f4;
+            }
+            .container {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                padding: 20px;
+                max-width: 1200px;
+                margin: auto;
+            }
+            .section {
+                background: #fff;
+                padding: 20px;
+                margin: 20px 0;
+                box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+                width: 100%;
+            }
+            h1, h2, h3, h4 {
+                color: #333;
+            }
+            table {
+                width: 100%;
+                border-collapse: collapse;
+                margin-bottom: 20px;
+            }
+            table, th, td {
+                border: 1px solid #ddd;
+            }
+            th, td {
+                padding: 8px;
+                text-align: left;
+            }
+            th {
+                background-color: #f2f2f2;
+            }
+            .synthetic-title {
+                background-color: #e9e9e9;
+                text-align: center;
+                font-weight: bold;
+                padding: 10px;
+            }
+            .flex {
+                display: flex;
+                flex-wrap: wrap;
+            }
+            .flex .item {
+                flex: 1 1 45%;
+                margin: 10px;
+                padding: 20px;
+                background: #e9e9e9;
+                box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+            }
+            .item input, .item select {
+                width: 100%;
+                padding: 10px;
+                margin-top: 10px;
+            }
+        </style>
+    <div class="container">
+    <div class="section">
+    <h1 id="mcetoc_1i2cjk40ll">Standard Operating Procedure</h1>
+    <h2 id="mcetoc_1i2cjk40lm">I. PURPOSE</h2>
+    <p>The purpose of this process is to use Datadog Site Synthetics to:</p>
+    <ul>
+    <li>Continuously monitor the end-user experience to detect website performance issues.</li>
+    <li>Find and fix web performance issues in both internal and customer-facing applications before users are affected.</li>
+    <li>Check if web servers or applications are up, down, or experiencing high loads.</li>
+    </ul>
+    <h2 id="mcetoc_1i2cjk40ln">II. SCOPE</h2>
+    <p>This process applies to all members of the Command Center.</p>
+    <h2 id="mcetoc_1i2cjk40lo">III. SUPPORT MODEL</h2>
+    <p>This process applies to Provider, Avalere, ComplexCare Solutions, Pharmacy and Payer Synthetic Monitors recorded in Datadog that simulate real user activity on a website. The automated user activity such as logging into the site or selecting various links on the page are played at various intervals from various locations to detect website performance issues. The steps to manually validate the websites are documented in this SOP.</p>
+    </div>
+    <div class="section">
+    <div class="flex">
+    <div class="item">
+    <h3 id="mcetoc_1i2cjk40lp">Synthetic Monitor Types</h3>
+    <p>Synthetic TX (Browser) Monitor &ndash; Synthetic Transactions (TX) are recorded steps that simulate real user activity on a website.</p>
+    <p>Synthetic API (HTTPS - SSL - ICMP - TCP - DNS) Monitor - API monitors test endpoints and proactively monitor that important services are available.</p>
+    </div>
+    <div class="item">
+    <h3 id="mcetoc_1i2cjk40lq">Command Center Actions</h3>
+    <p>Be sure to verify if there is maintenance prior to escalating. Check the Synthetic Monitor to determine which step is failing.</p>
+    </div>
+    </div>
+    </div>
+    <div class="section">
+    <h2 id="mcetoc_1i2cjk40lr">Synthetic Monitor Information Chart</h2>
+    <table>
+    <thead>
+    <tr>
+    <th>Synthetic Name &amp; URL</th>
+    <th>Validation Steps</th>
+    <th>Escalation Path</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+    <td class="synthetic-title" colspan="3">ABILITY &amp; INOV SSL Alerts (ALL)</td>
+    </tr>
+    <tr>
+    <td>URL: <a href="https://example.com" rel="nofollow">https://example.com</a></td>
+    <td>1. Verify SSL certificate is valid.<br />2. Check SSL configuration for any errors.<br />3. Use online tools to diagnose SSL issues.</td>
+    <td>1. Notify IT team.<br />2. Escalate to SSL management team if unresolved.<br />3. Inform stakeholders about SSL status.</td>
+    </tr>
+    <tr>
+    <td class="synthetic-title" colspan="3">ABILITY MULTIPLE PRODUCT Alerts</td>
+    </tr>
+    <tr>
+    <td>URL: <a href="https://example2.com" rel="nofollow">https://example2.com</a></td>
+    <td>1. Check product server status.<br />2. Validate product functionalities through manual tests.<br />3. Review system logs for errors.</td>
+    <td>1. Report issues to product support team.<br />2. Follow up with technical leads if unresolved.<br />3. Document and communicate the status.</td>
+    </tr>
+    </tbody>
+    </table>
+    </div>
+    </div>
