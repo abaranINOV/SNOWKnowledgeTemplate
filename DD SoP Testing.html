@@ -98,13 +98,13 @@
             <div class="item">
                 <h3 id="mcetoc_placeholder1">API Monitor Types</h3>
                 <ul>
-                    <li>HTTPS Test - <b>Synthetic API (HTTPS) Monitor</b> - Synthetic HTTP API’s test a web server’s ability to accept incoming sessions over a secure channel and then transmit the requested page; allows sending of HTTP requests to our application API endpoints in order to verify that they are responding to the requests, as well as that the site meets any conditions defined ie: response time, status code and header or body content.</li>
+                    <li>HTTPS Test &ndash; <b>Synthetic API (HTTPS) Monitor</b> &ndash; Synthetic HTTP API’s test a web server’s ability to accept incoming sessions over a secure channel and then transmit the requested page; allows sending of HTTP requests to our application API endpoints in order to verify that they are responding to the requests, as well as that the site meets any conditions defined ie: response time, status code and header or body content.</li>
                     &nbsp;
-                    <li>SSL Test - <b>Synthetic API (SSL) Monitor</b> - Synthetic SSL API’s allow proactive monitoring of the validity and expiration of your SSL/TLS certificates to ensure secure connections between our key services and user. Be sure to escalate these at 21 and 7 Days to expiry. An alert will be received at 21 days; monitor the CC Dashboard to determine Day 7 See <a href="#mcetoc_placeholder2">entry #1</a> in the SYNTHETIC MONITOR INFORMATION CHART for further details on SSL escalations.</li>
+                    <li>SSL Test &ndash; <b>Synthetic API (SSL) Monitor</b> &ndash; Synthetic SSL API’s allow proactive monitoring of the validity and expiration of your SSL/TLS certificates to ensure secure connections between our key services and user. Be sure to escalate these at 21 and 7 Days to expiry. An alert will be received at 21 days; monitor the CC Dashboard to determine Day 7 See <a href="#mcetoc_placeholder2">entry #1</a> in the SYNTHETIC MONITOR INFORMATION CHART for further details on SSL escalations.</li>
                     &nbsp;
-                    <li>ICMP Test - <b>Synthetic API (ICMP) Monitor</b> - Synthetic ICMP API’s allow you to easily monitor the availability of your hosts and diagnose network communication issues.</li>
+                    <li>ICMP Test &ndash; <b>Synthetic API (ICMP) Monitor</b> &ndash; Synthetic ICMP API’s allow you to easily monitor the availability of your hosts and diagnose network communication issues.</li>
                     &nbsp;
-                    <li>TCP Test - CC is not monitoring with this type of API at this time.</li>
+                    <li>TCP Test&ndash;CC is not monitoring with this type of API at this time.</li>
                     &nbsp;
                     <li>DNS Test - CC is not monitoring with this type of API at this time.</li>
                 </ul>
@@ -113,6 +113,65 @@
     </div>
     <div class="section">
         <h2>Command Center Actions</h2>
+        <h4 style="color: #00f; text-align: center;">*** NOTE: BE SURE TO VERIFY IF THERE IS MAINTENANCE PRIOR TO ESCALATING ***</h4>
+        <ol>
+            <li>Check the Synthetic Monitor to determine which step is failing. (See Information Chart below)</li>
+            &nbsp;
+            <li>When an alert is received, manually perform the Synthetic TX steps to validate the website status prior to escalating. (See Information Chart below).</li>
+            &nbsp;
+            <li>If manual validation returns the web page as expected, without error, and the referenced text/image can be verified, no escalation is required. Notify CC ONLY of the results. <b style="text-decoration: underline">However, if the Monitor does not recover in 5-10 mins, and you have ruled out a possible pw change to account, do an fyi escalation.</b></li>
+            &nbsp;
+            <li>If manual validation does NOT return the web page as expected, has an error, or the referenced text/image cannot be verified, follow the escalation instructions in the SOP for each TX & API and provide the error(s) received and screenshot(s). <b style="text-decoration: underline">When escalating, if a response is not received via email, reach out via teams or phone to those listed in the TO section first, then the CC section.</b></li>
+            &nbsp;
+            <li><b>For MOST SSL’s… escalate TO: DCO at 21 Days and 7 Days to Expiry.</b> See <a href="#mcetoc_placeholder2">#1</a> in the SYNTHETIC MONITOR INFORMATION CHART for further details on SSL escalations as there are some exceptions. <b>The Command Center Dashboard (bottom) is the best view of SSL’s soon to expire.</b> NOTE: When viewing the Dashboard be certain to change the viewing time to either Past 1 Day or Past 2 Days to get the most updated SSL information.</b></li>
+            &nbsp;
+            <li><b>COMMON ERRORS RECEIVED</b> &ndash; The following are some common errors that may be received in an alert. <nobr style="text-decoration: underline;text-wrap: wrap;">Any of these errors could mean the site is down or inaccessible.</nobr></li>
+            <div class="flex">
+                <div class="item">
+                    <ul>
+                        <li><b>301 Moved Permanently</b> &ndash; The Site URL may have changed</li>
+                        &nbsp;
+                        <li><b>404 NOT FOUND</b> &ndash; The browser was able to communicate with a given server, but the server could not find what was requested; Site may be in maintenance</li>
+                        &nbsp;
+                        <li><b>429 Too Many Requests</b> &ndash; Users may have sent too many requests within a short period of time</li>
+                        &nbsp;
+                        <li><b>502 BAD GATEWAY</b> &ndash; The server received an invalid response from the upstream server; Site may be in maintenance</li>
+                        &nbsp;
+                        <li><b>503 SERVICE UNAVAILABLE</b> &ndash; The web server is temporarily unable to handle the request; Site may be in maintenance</li>
+                        &nbsp;
+                        <li><b>504 GATEWAY TIMEOUT</b> &ndash; The proxy server did not receive a timely response from the upstream server; Site may be in maintenance</li>
+                        &nbsp;
+                        <li><b>Body should contain "text"</b> &ndash; The page did not return the expected text; Site may be in maintenance</li>
+                        &nbsp;
+                        <li><b>Error: Page does not contain given text</b> &ndash; The page did not return the expected text; If site is inaccessible may be a password issue</li>
+                        &nbsp;
+                        <li><b>We couldn't test any of the assertions</b>
+                            <br><nobr style="text-decoration: underline;text-wrap: wrap;">CONNRESET: The connection was abruptly closed by the remote server</nobr> &ndash; The server may have been rebooted or site may be in maintenance
+                            <br><nobr style="text-decoration: underline;text-wrap: wrap;">SSL: unable to verify the first certificate</nobr> &ndash; The certificate may have expired
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            &nbsp;
+            <li><b>EMAIL ALERTS:</b> Email alerts will be sent ONLY when the Alert Conditions have been met. For all DD monitors the email alert is sent when a monitor fails 3 times from the specified number of locations for that monitor.</li>
+            &nbsp;
+            <li><b>DASHBOARD ALERTS:</b> Alerts that appear in the DD Dashboard may not have met the conditions for sending an email and should not be escalated. Instead, monitor the dashboard alert, manually check the site, and escalate when an email alert is received. NOTE: Alerts begin to populate in the DD Dashboard when the monitor fails 1 time.</li>
+            &nbsp;
+            <li><b>TEST MONITOR DECOMM STEPS:</b></li>
+            <div class="flex">
+                <div class="item">
+                    <ul>
+                        <li>Decomm test monitor from Datadog</li>
+                        &nbsp;
+                        <li>Remove test monitor entry from this SOP</li>
+                        &nbsp;
+                        <li>Add test monitor entry to the Version History of this SOP</li>
+                        &nbsp;
+                        <li>Add test monitor entry to the Device Monitoring Sheet</li>
+                    </ul>
+                </div>
+            </div>
+        </ol>
     </div>
     <div class="section">
         <h2 id="mcetoc_1i2cjk40lr">&lt;section title&gt;</h2>
