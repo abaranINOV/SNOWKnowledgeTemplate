@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<head>
+</head>
+<!--
+    At the bottom of this HTML code, I have placed blocks of code between comment
+    markers (also seen at the start and end of this note), along with a brief direction
+    on their function and where to use them within the HTML.
+-->
+
+<style>
+            body {
+                font-family: Arial, sans-serif;
+                margin: 0;
+                padding: 0;
+                background-color: #f4f4f4;
+                font-size: 12pt;
+            }
+            .container {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                padding: 20px;
+                max-width: 1200px;
+                margin: auto;
+            }
+            .section {
+                background: #fff;
+                padding: 20px;
+                margin: 20px 0;
+                box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+                width: 100%;
+            }
+            h1, h2, h3, h4 {
+                color: #333;
+            }
+            table {
+                width: 100%;
+                border-collapse: collapse;
+                margin-bottom: 20px;
+            }
+            th, td {
+                padding: 8px;
+                text-align: left;
+            }
+            th {
+                background-color: #f2f2f2;
+            }
+            .table-title {
+                background-color: rgb(255, 217, 0);
+                text-align: center;
+                font-weight: bold;
+                padding: 10px;
+            }
+            .column-header {
+                background-color: #0F243E;
+                color: #fff;
+                font-weight: bold;
+                text-align: center;
+            }
+            .synthetic-title {
+                background-color: #C6D9F1;
+                text-align: center;
+                font-weight: bold;
+                padding: 10px;
+            }
+            .flex {
+                display: flex;
+                flex-wrap: wrap;
+            }
+            .flex .item {
+                flex: 1 1 45%;
+                margin: 10px;
+                padding: 20px;
+                background: #e9e9e9;
+                box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+            }
+</style>
+
+<div class="container">
+    <h1>DataDog Synthetics SOP</h1>
+    <div class="section">
+        <h1 id="mcetoc_1i2cjk40ll">Standard Operating Procedure</h1>
+        <h2 id="mcetoc_1i2cjk40lm">I. PURPOSE</h2>
+        <p>The purpose of this process is to:</p>
+        <ul>
+            <li>Continuously monitor the end-user experience to detect website performance issues.</li>
+            <li>Find and fix web performance issues in both internal and customer-facing applications before users are affected.</li>
+            <li>Check if web servers or applications are up, down, or experiencing high loads.</li>
+        </ul>
+        <h2 id="mcetoc_1i2cjk40ln">II. SCOPE</h2>
+        <p>This process applies to all members of the Command Center.</p>
+        <h2 id="mcetoc_1i2cjk40lo">III. PROCESS</h2>
+        <p>This process applies to Provider, Avalere, ComplexCare Solutions, Pharmacy and Payer Synthetic Monitors recorded in Datadog that simulate real user activity on a website. The automated user activity such as logging into the site or selecting various links on the page are played at various intervals from various locations to detect website performance issues. The steps to manually validate the websites are documented in this SOP.</p>
+    </div>
+    <div class="section">
+        <h2>Synthetic Monitor Types: TX &amp; API's</h2>
+        <div class="flex">
+            <div class="item">
+                <h3 id="mcetoc_1i2cjk40lp"><u>Synthetic TX (Browser) Monitor</u></h3>
+                <p>Synthetic Transactions (TX) are recorded steps that simulate real user activity on a website such as logging into the site or selecting various links on the page. The recorded activity is played at various intervals from various locations to detect website performance issues. The TX and steps are documented in this SOP.</p>
+            </div>
+            <div class="item">
+                <h3 id="mcetoc_1i2cjk40lq"><u>Synthetic API (HTTPS - SSL - ICMP - DNS) Monitor</u></h3>
+                <p>API monitors test endpoints and proactively monitor that important services are available at any time and from anywhere. API tests come in different types that allow launching of requests on the different network layers of the systems.</p>
+            </div>
+        </div>
+        <div class="flex">
+            <div class="item">
+                <h3 id="mcetoc_placeholder1">API Monitor Types</h3>
+                <ul>
+                    <li style="margin:10px 0">HTTPS Test &ndash; <strong>Synthetic API (HTTPS) Monitor</strong> &ndash; Synthetic HTTP API’s test a web server’s ability to accept incoming sessions over a secure channel and then transmit the requested page; allows sending of HTTP requests to our application API endpoints in order to verify that they are responding to the requests, as well as that the site meets any conditions defined ie: response time, status code and header or body content.</li>
+                    <li style="margin:10px 0">SSL Test &ndash; <strong>Synthetic API (SSL) Monitor</strong> &ndash; Synthetic SSL API’s allow proactive monitoring of the validity and expiration of your SSL/TLS certificates to ensure secure connections between our key services and user. Be sure to escalate these at 21 and 7 Days to expiry. An alert will be received at 21 days; monitor the CC Dashboard to determine Day 7. See entry #1 in the SYNTHETIC MONITOR INFORMATION CHART for further details on SSL escalations.</li>
+                    <li style="margin:10px 0">ICMP Test &ndash; <strong>Synthetic API (ICMP) Monitor</strong> &ndash; Synthetic ICMP API’s allow you to easily monitor the availability of your hosts and diagnose network communication issues.</li>
+                    <li style="margin:10px 0">TCP Test&ndash;CC is not monitoring with this type of API at this time.</li>
+                    <li>DNS Test - CC is not monitoring with this type of API at this time.</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>

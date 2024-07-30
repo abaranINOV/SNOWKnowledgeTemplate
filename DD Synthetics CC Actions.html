@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<head>
+</head>
+<!--
+    At the bottom of this HTML code, I have placed blocks of code between comment
+    markers (also seen at the start and end of this note), along with a brief direction
+    on their function and where to use them within the HTML.
+-->
+
+<style>
+            body {
+                font-family: Arial, sans-serif;
+                margin: 0;
+                padding: 0;
+                background-color: #f4f4f4;
+                font-size: 12pt;
+            }
+            .container {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                padding: 20px;
+                max-width: 1200px;
+                margin: auto;
+            }
+            .section {
+                background: #fff;
+                padding: 20px;
+                margin: 20px 0;
+                box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+                width: 100%;
+            }
+            h1, h2, h3, h4 {
+                color: #333;
+            }
+            table {
+                width: 100%;
+                border-collapse: collapse;
+                margin-bottom: 20px;
+            }
+            th, td {
+                padding: 8px;
+                text-align: left;
+            }
+            th {
+                background-color: #f2f2f2;
+            }
+            .table-title {
+                background-color: rgb(255, 217, 0);
+                text-align: center;
+                font-weight: bold;
+                padding: 10px;
+            }
+            .column-header {
+                background-color: #0F243E;
+                color: #fff;
+                font-weight: bold;
+                text-align: center;
+            }
+            .synthetic-title {
+                background-color: #C6D9F1;
+                text-align: center;
+                font-weight: bold;
+                padding: 10px;
+            }
+            .flex {
+                display: flex;
+                flex-wrap: wrap;
+            }
+            .flex .item {
+                flex: 1 1 45%;
+                margin: 10px;
+                padding: 20px;
+                background: #e9e9e9;
+                box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+            }
+</style>
+
+<div class="container">
+    <h1>DataDog Synthetics SOP</h1>
+    <div class="section">
+        <h1 id="mcetoc_1i2cjk40ll">Standard Operating Procedure</h1>
+        <h2 id="mcetoc_1i2cjk40lm">I. PURPOSE</h2>
+        <p>The purpose of this process is to:</p>
+        <ul>
+            <li>Continuously monitor the end-user experience to detect website performance issues.</li>
+            <li>Find and fix web performance issues in both internal and customer-facing applications before users are affected.</li>
+            <li>Check if web servers or applications are up, down, or experiencing high loads.</li>
+        </ul>
+        <h2 id="mcetoc_1i2cjk40ln">II. SCOPE</h2>
+        <p>This process applies to all members of the Command Center.</p>
+        <h2 id="mcetoc_1i2cjk40lo">III. PROCESS</h2>
+        <p>This process applies to Provider, Avalere, ComplexCare Solutions, Pharmacy and Payer Synthetic Monitors recorded in Datadog that simulate real user activity on a website. The automated user activity such as logging into the site or selecting various links on the page are played at various intervals from various locations to detect website performance issues. The steps to manually validate the websites are documented in this SOP.</p>
+    </div>
+    <div class="section">
+        <h2>Command Center Actions for All DataDog Synthetics and Monitors</h2>
+        <h4 style="color: #00f; text-align: center;">*** NOTE: BE SURE TO VERIFY IF THERE IS MAINTENANCE PRIOR TO ESCALATING ***</h4>
+        <ol>
+            <li style="margin:15px 0">Check the Synthetic Monitor to determine which step is failing. (See Information Chart below)</li>
+            <li style="margin:15px 0">When an alert is received, manually perform the Synthetic TX steps to validate the website status prior to escalating. (See Information Chart below).</li>
+            <li style="margin:15px 0">If manual validation returns the web page as expected, without error, and the referenced text/image can be verified, no escalation is required. Notify CC ONLY of the results. <strong style="text-decoration: underline">However, if the Monitor does not recover in 5-10 mins, and you have ruled out a possible pw change to account, do an fyi escalation.</strong></li>
+            <li style="margin:15px 0">If manual validation does NOT return the web page as expected, has an error, or the referenced text/image cannot be verified, follow the escalation instructions in the SOP for each TX & API and provide the error(s) received and screenshot(s). <strong style="text-decoration: underline">When escalating, if a response is not received via email, reach out via teams or phone to those listed in the TO section first, then the CC section.</strong></li>
+            <li style="margin:15px 0"><strong>For MOST SSL’s… escalate TO: DCO at 21 Days and 7 Days to Expiry.</strong> See <a href="#mcetoc_placeholder2">#1</a> in the SYNTHETIC MONITOR INFORMATION CHART for further details on SSL escalations as there are some exceptions. <strong>The Command Center Dashboard (bottom) is the best view of SSL’s soon to expire.</strong> NOTE: When viewing the Dashboard be certain to change the viewing time to either Past 1 Day or Past 2 Days to get the most updated SSL information.</li>
+            <li style="margin:15px 0"><strong>COMMON ERRORS RECEIVED</strong> &ndash; The following are some common errors that may be received in an alert. <span style="text-decoration: underline;text-wrap: wrap;">Any of these errors could mean the site is down or inaccessible.</span>
+                <div class="flex">
+                    <div class="item">
+                        <ul>
+                            <li style="margin:15px 0"><strong>301 Moved Permanently</strong> &ndash; The Site URL may have changed</li>
+                            <li style="margin:15px 0"><strong>404 NOT FOUND</strong> &ndash; The browser was able to communicate with a given server, but the server could not find what was requested; Site may be in maintenance</li>
+                            <li style="margin:15px 0"><strong>429 Too Many Requests</strong> &ndash; Users may have sent too many requests within a short period of time</li>
+                            <li style="margin:15px 0"><strong>502 BAD GATEWAY</strong> &ndash; The server received an invalid response from the upstream server; Site may be in maintenance</li>
+                            <li style="margin:15px 0"><strong>503 SERVICE UNAVAILABLE</strong> &ndash; The web server is temporarily unable to handle the request; Site may be in maintenance</li>
+                            <li style="margin:15px 0"><strong>504 GATEWAY TIMEOUT</strong> &ndash; The proxy server did not receive a timely response from the upstream server; Site may be in maintenance</li>
+                            <li style="margin:15px 0"><strong>Body should contain "text"</strong> &ndash; The page did not return the expected text; Site may be in maintenance</li>
+                            <li style="margin:15px 0"><strong>Error: Page does not contain given text</strong> &ndash; The page did not return the expected text; If site is inaccessible may be a password issue</li>
+                            <li style="margin:15px 0"><strong>We couldn't test any of the assertions</strong>
+                                <br><span style="text-decoration: underline;text-wrap: wrap;">CONNRESET: The connection was abruptly closed by the remote server</span> &ndash; The server may have been rebooted or site may be in maintenance
+                                <br><span style="text-decoration: underline;text-wrap: wrap;">SSL: unable to verify the first certificate</span> &ndash; The certificate may have expired
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </li>
+            <li style="margin:15px 0"><strong>EMAIL ALERTS:</strong> Email alerts will be sent ONLY when the Alert Conditions have been met. For all DD monitors the email alert is sent when a monitor fails 3 times from the specified number of locations for that monitor.</li>
+            <li style="margin:15px 0"><strong>DASHBOARD ALERTS:</strong> Alerts that appear in the DD Dashboard may not have met the conditions for sending an email and should not be escalated. Instead, monitor the dashboard alert, manually check the site, and escalate when an email alert is received. NOTE: Alerts begin to populate in the DD Dashboard when the monitor fails 1 time.</li>
+            <li style="margin:15px 0"><strong>TEST MONITOR DECOMM STEPS:</strong>
+                <div class="flex">
+                    <div class="item">
+                        <ul>
+                            <li style="margin:15px 0">Decomm test monitor from Datadog</li>
+                            <li style="margin:15px 0">Remove test monitor entry from this SOP</li>
+                            <li style="margin:15px 0">Add test monitor entry to the Version History of this SOP</li>
+                            <li style="margin:15px 0">Add test monitor entry to the Device Monitoring Sheet</li>
+                        </ul>
+                    </div>
+                </div>
+            </li>
+        </ol>
+    </div>
+</div>
