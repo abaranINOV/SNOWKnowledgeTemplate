@@ -8,62 +8,72 @@
 -->
 
 <style>
-            body {
-                font-family: Arial, sans-serif;
-                margin: 0;
-                padding: 0;
-                background-color: #f4f4f4;
-            }
-            .container {
-                display: flex;
-                flex-direction: column;
-                align-items: center;
-                padding: 20px;
-                max-width: 1200px;
-                margin: auto;
-            }
-            .section {
-                background: #fff;
-                padding: 20px;
-                margin: 20px 0;
-                box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-                width: 100%;
-            }
-            h1, h2, h3, h4 {
-                color: #333;
-            }
-            table {
-                width: 100%;
-                border-collapse: collapse;
-                margin-bottom: 20px;
-            }
-            table, th, td {
-                border: 1px solid #ddd;
-            }
-            th, td {
-                padding: 8px;
-                text-align: left;
-            }
-            th {
-                background-color: #f2f2f2;
-            }
-            .synthetic-title {
-                background-color: #e9e9e9;
-                text-align: center;
-                font-weight: bold;
-                padding: 10px;
-            }
-            .flex {
-                display: flex;
-                flex-wrap: wrap;
-            }
-            .flex .item {
-                flex: 1 1 45%;
-                margin: 10px;
-                padding: 20px;
-                background: #e9e9e9;
-                box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
-            }
+    body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: #f4f4f4;
+        font-size: 12pt;
+    }
+    .container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 20px;
+        max-width: 1200px;
+        margin: auto;
+    }
+    .section {
+        background: #fff;
+        padding: 20px;
+        margin: 20px 0;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        width: 100%;
+    }
+    h1, h2, h3, h4 {
+        color: #333;
+    }
+    table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-bottom: 20px;
+    }
+    th, td {
+        padding: 8px;
+        text-align: left;
+    }
+    th {
+        background-color: #f2f2f2;
+    }
+    .table-title {
+        background-color: rgb(255, 217, 0);
+        text-align: center;
+        font-weight: bold;
+        padding: 10px;
+    }
+    .column-header {
+        background-color: #0F243E;
+        color: #fff;
+        font-weight: bold;
+        text-align: center;
+    }
+    .synthetic-title {
+        background-color: #C6D9F1;
+        text-align: center;
+        font-weight: bold;
+        padding: 10px;
+    }
+    .flex {
+        display: flex;
+        flex-wrap: wrap;
+    }
+    .flex .item {
+        flex: 1 1 45%;
+        margin: 10px;
+        padding: 20px;
+        background: #e9e9e9;
+        box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+    }
 </style>
 
 <div class="container">
@@ -92,30 +102,41 @@
     </div>
     <div class="section">
         <h2 id="mcetoc_1i2cjk40lr">&lt;section title&gt;</h2>
-        <table>
+        <table style="border: 1px solid #888888; width: 100%; height: 940.452px;">
             <thead>
-                <tr>
-                    <th>Column 1</th>
-                    <th>Column 2</th>
-                    <th>Column 3</th>
+                <tr style="height: 22.3906px;">
+                    <th class="table-title" style="width: 105.906%; height: 22.3906px;" colspan="3">Example Table</th>
+                </tr>
+                <tr style="height: 67.1719px;">
+                    <th class="column-header" style="border-style: solid; border-color: #222222 #cccccc #222222 #222222; border-width: 1px; width: 29.2773%; height: 67.1719px;">Example Column Header #1</th>
+                    <th class="column-header" style="width: 50%; border-style: solid; border-color: #222222 #cccccc; border-width: 1px; height: 67.1719px;">Example Column Header #2</th>
+                    <th class="column-header" style="border-style: solid; border-color: #222222 #222222 #222222 #cccccc; border-width: 1px; width: 26.6289%; height: 67.1719px;">Example Column Header #3</th>
                 </tr>
             </thead>
             <tbody>
-                <tr>
-                    <td class="synthetic-title" colspan="3">Example entry 1</td>
+                <tr style="height: 22.3906px;">
+                    <td id="mcetoc_placeholder2" class="synthetic-title" style="border: 1px solid #888888; width: 105.906%; height: 22.3906px;" colspan="3">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin auctor.</td>
                 </tr>
-                <tr>
-                    <td>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin auctor.</td>
-                    <td>1. Lorem ipsum dolor sit amet, consectetur adipiscing elit.<br />2. Pellentesque id diam vel eros pellentesque convallis.<br />3. Nam finibus orci vel arcu condimentum consequat.</td>
-                    <td>1. Lorem ipsum dolor sit amet, consectetur adipiscing elit.<br />2. Pellentesque id diam vel eros pellentesque convallis.<br />3. Nam finibus orci vel arcu condimentum consequat.</td>
+                <tr style="height: 188.734px;">
+                    <td style="border: 1px solid #888888; vertical-align: top; width: 29.2773%; height: 188.734px;">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin auctor.<hr style="border: 1px solid;" /><span id="mce_64"></span>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin auctor.</td>
+                    <td style="border: 1px solid #888888; vertical-align: top; width: 50%; height: 188.734px;">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin auctor.</td>
+                    <td style="border: 1px solid #888888; vertical-align: top; width: 26.6289%; height: 188.734px;">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin auctor.</td>
                 </tr>
-                <tr>
-                    <td class="synthetic-title" colspan="3">Example entry 2</td>
+                <tr style="height: 22.3906px;">
+                    <td class="synthetic-title" style="border: 1px solid #888888; width: 105.906%; height: 22.3906px;" colspan="3">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin auctor.</td>
                 </tr>
-                <tr>
-                    <td>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin auctor.</td>
-                    <td>1. Lorem ipsum dolor sit amet, consectetur adipiscing elit.<br />2. Pellentesque id diam vel eros pellentesque convallis.<br />3. Nam finibus orci vel arcu condimentum consequat.</td>
-                    <td>1. Lorem ipsum dolor sit amet, consectetur adipiscing elit.<br />2. Pellentesque id diam vel eros pellentesque convallis.<br />3. Nam finibus orci vel arcu condimentum consequat.</td>
+                <tr style="height: 188.734px;">
+                    <td style="border: 1px solid #888888; vertical-align: top; width: 29.2773%; height: 188.734px;">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin auctor.<hr style="border: 1px solid;" /><span id="mce_64"></span>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin auctor.</td>
+                    <td style="border: 1px solid #888888; vertical-align: top; width: 50%; height: 188.734px;">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin auctor.</td>
+                    <td style="border: 1px solid #888888; vertical-align: top; width: 26.6289%; height: 188.734px;">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin auctor.</td>
+                </tr>
+                <tr style="height: 22.3906px;">
+                    <td id="mcetoc_placeholder2" class="synthetic-title" style="border: 1px solid #888888; width: 105.906%; height: 22.3906px;" colspan="3">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin auctor.</td>
+                </tr>
+                <tr style="height: 188.734px;">
+                    <td style="border: 1px solid #888888; vertical-align: top; width: 29.2773%; height: 188.734px;">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin auctor.<hr style="border: 1px solid;" /><span id="mce_64"></span>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin auctor.</td>
+                    <td style="border: 1px solid #888888; vertical-align: top; width: 50%; height: 188.734px;">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin auctor.</td>
+                    <td style="border: 1px solid #888888; vertical-align: top; width: 26.6289%; height: 188.734px;">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin auctor.</td>
                 </tr>
             </tbody>
         </table>
@@ -146,4 +167,17 @@
     <div class="item">
         <p>&lt;stuff goes here&gt;</p>
     </div>
+-->
+
+<!-- 
+    COPY AND PASTE THE BELOW CODE BLOCK ONTO A NEW LINE AFTER THE LAST </tr> TAG OF THE TABLE BLOCK (JUST BEFORE THE </tbody> TAG) TO ADD A NEW ROW OF DATA TO THE TABLE
+
+    <tr style="height: 22.3906px;">
+        <td id="mcetoc_placeholder2" class="synthetic-title" style="border: 1px solid #888888; width: 105.906%; height: 22.3906px;" colspan="3">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin auctor.</td>
+    </tr>
+    <tr style="height: 188.734px;">
+        <td style="border: 1px solid #888888; vertical-align: top; width: 29.2773%; height: 188.734px;">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin auctor.<hr style="border: 1px solid;" /><span id="mce_64"></span>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin auctor.</td>
+        <td style="border: 1px solid #888888; vertical-align: top; width: 50%; height: 188.734px;">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin auctor.</td>
+        <td style="border: 1px solid #888888; vertical-align: top; width: 26.6289%; height: 188.734px;">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin auctor.</td>
+    </tr>
 -->
