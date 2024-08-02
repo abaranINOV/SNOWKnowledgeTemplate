@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<head>
+</head>
+<!--
+    At the bottom of this HTML code, I have placed blocks of code between comment
+    markers (also seen at the start and end of this note), along with a brief direction
+    on their function and where to use them within the HTML.
+-->
+
+<style>
+            body {
+                font-family: Arial, sans-serif;
+                margin: 0;
+                padding: 0;
+                background-color: #f4f4f4;
+                font-size: 12pt;
+            }
+            .container {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                padding: 20px;
+                max-width: 1200px;
+                margin: auto;
+            }
+            .section {
+                background: #fff;
+                padding: 20px;
+                margin: 20px 0;
+                box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+                width: 100%;
+            }
+            h1, h2, h3, h4 {
+                color: #333;
+            }
+            table {
+                width: 100%;
+                border-collapse: collapse;
+                margin-bottom: 20px;
+            }
+            th, td {
+                padding: 8px;
+                text-align: left;
+            }
+            th {
+                background-color: #f2f2f2;
+            }
+            .table-title {
+                background-color: rgb(255, 217, 0);
+                text-align: center;
+                font-weight: bold;
+                padding: 10px;
+            }
+            .column-header {
+                background-color: #0F243E;
+                color: #fff;
+                font-weight: bold;
+                text-align: center;
+            }
+            .synthetic-title {
+                background-color: #C6D9F1;
+                text-align: center;
+                font-weight: bold;
+                padding: 10px;
+            }
+            .flex {
+                display: flex;
+                flex-wrap: wrap;
+            }
+            .flex .item {
+                flex: 1 1 45%;
+                margin: 10px;
+                padding: 20px;
+                background: #e9e9e9;
+                box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+            }
+</style>
+
+<div class="container">
+    <h1>DataDog Synthetics SOP</h1>
+    <div class="section">
+        <h1 id="mcetoc_1i2cjk40ll">Standard Operating Procedure</h1>
+        <h2 id="mcetoc_1i2cjk40lm">I. PURPOSE</h2>
+        <p>The purpose of this process is to:</p>
+        <ul>
+            <li>Continuously monitor the end-user experience to detect website performance issues.</li>
+            <li>Find and fix web performance issues in both internal and customer-facing applications before users are affected.</li>
+            <li>Check if web servers or applications are up, down, or experiencing high loads.</li>
+        </ul>
+        <h2 id="mcetoc_1i2cjk40ln">II. SCOPE</h2>
+        <p>This process applies to all members of the Command Center.</p>
+        <h2 id="mcetoc_1i2cjk40lo">III. PROCESS</h2>
+        <p>This process applies to Provider, Avalere, ComplexCare Solutions, Pharmacy and Payer Synthetic Monitors recorded in Datadog that simulate real user activity on a website. The automated user activity such as logging into the site or selecting various links on the page are played at various intervals from various locations to detect website performance issues. The steps to manually validate the websites are documented in this SOP.</p>
+    </div>
+    <div class="section">
+        <h2 id="mcetoc_1i2cjk40lr" style="font-style: italic;">SYNTHETIC MONITOR INFORMATION CHART</h2>
+        <p style="text-align: center;font-weight: bold;">To view ALL Synthetic TX & API Monitors: <a href="https://app.datadoghq.com/synthetics/list">https://app.datadoghq.com/synthetics/list</a></p>
+        &nbsp;
+        <table style="border: 1px solid #888888; width: 100%; height: 940.452px;">
+            <thead>
+                <tr style="height: 22.3906px;">
+                    <th class="table-title" style="width: 105.906%; height: 22.3906px;" colspan="3">Datadog Synthetic Information Chart</th>
+                </tr>
+                <tr style="height: 67.1719px;">
+                    <th class="column-header" style="border-style: solid; border-color: #222222 #cccccc #222222 #222222; border-width: 1px; width: 29.2773%; height: 67.1719px;">Synthetic TX &amp; API Names<hr />URLs &amp; Credentials</th>
+                    <th class="column-header" style="width: 50%; border-style: solid; border-color: #222222 #cccccc; border-width: 1px; height: 67.1719px;">Synthetic TX &amp; API Details:<br />Steps &amp; Actions to <span style="color: #f00;">Manually Perform &amp; Validate TX &amp; API Monitors</span></th>
+                    <th class="column-header" style="border-style: solid; border-color: #222222 #222222 #222222 #cccccc; border-width: 1px; width: 26.6289%; height: 67.1719px;"><span style="color: #ff0;">Escalation Path</span></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr style="height: 22.3906px;">
+                    <td id="mcetoc_placeholder2" class="synthetic-title" style="border: 1px solid #888888; width: 105.906%; height: 22.3906px;" colspan="3">Provider CHOICE Claims Management &amp; MDOL API --- <a href="www.mdon-line.com/mdonline/index.asp">www.mdon-line.com/mdonline/index.asp</a><span id="mce_39"></span></td>
+                </tr>
+                <tr style="height: 188.734px;">
+                    <td style="border: 1px solid #888888; vertical-align: top; width: 29.2773%; height: 188.734px;"><strong>Provider CHOICE Claims Management &amp; MDOL API</strong><br />Location in DD:<br /><a href="https://app.datadoghq.com/synthetics/details/ff4-s5f-7y2?live=1h">https://app.datadoghq.com/synthetics/details/ff4-s5f-7y2?live=1h</a><hr style="border: 1px solid;" /><span id="mce_64"></span><a href="https://www.mdon-line.com/mdonline/index.asp">https://www.mdon-line.com/mdonline/index.asp</a><br />No credentials</td>
+                    <td style="border: 1px solid #888888; vertical-align: top; width: 50%; height: 188.734px;"><strong>Check for Maintenance</strong><p><strong>1.</strong> Check that navigation to site is successful&nbsp;<br /><strong>2.</strong> Page displays: Website Login&nbsp;<br /><br /></p></td>
+                    <td style="border: 1px solid #888888; vertical-align: top; width: 26.6289%; height: 188.734px;"><strong>TO:</strong> <br />James.Blythe@inovalon.com;<br />applicationoperationssupport@inovalon.com;<br />EligibilityWorkflow-Operations@inovalon.com;<br /><strong>CC:</strong><br /><span id="mce_117"></span> DataCenterOperations@inovalon.com;</td>
+                </tr>
+                <tr style="height: 22.3906px;">
+                    <td class="synthetic-title" style="border: 1px solid #888888; width: 105.906%; height: 22.3906px;" colspan="3">Provider CHOICE Claims Management &amp; MDOL TX --- <a href="http://www.mdon-line.com/mdonline/index.asp">www.mdon-line.com/mdonline/index.asp</a></td>
+                </tr>
+                <tr style="height: 406.25px;">
+                    <td style="border: 1px solid #888888; vertical-align: top; width: 29.2773%; height: 406.25px;"><strong>Provider CHOICE Claims Management &amp; MDOL TX</strong><br />Location in DD:<br /><a href="https://app.datadoghq.com/synthetics/details/c5h-qjq-8z2?live=1h">https://app.datadoghq.com/synthetics/details/c5h-qjq-8z2?live=1h</a><hr style="border: 1px solid;" /><a href="https://www.mdon-line.com/mdonline/index.asp">https://www.mdon-line.com/mdonline/index.asp</a><br />UN: James99r4</td>
+                    <td style="border: 1px solid #888888; vertical-align: top; width: 50%; height: 406.25px;"><strong>Uploaded Claim File Location:</strong><br /><strong>Map to: </strong>\\ente000cprsfs01\CommandCenter<p><strong>Check for Maintenance</strong></p><p><strong>1.</strong> Navigate to Homepage<br /><strong>2.</strong> Enter Username<br /><strong>3.</strong> Click on input #txtPwd (skip this step during manual test)<br /><strong>4.</strong> Select &ldquo;Customer Login&rdquo; button<br /><strong>5.</strong> Verify text &ldquo;Actions&rdquo; is present on page<br /><strong>6.</strong> Select &ldquo;Send Claims&rdquo; link<br /><strong>7.</strong> Select &ldquo;Choose File&rdquo; on file upload field -- (navigate to file as directed see &ldquo;Uploaded Claim File Location&rdquo; in cell to the left)<br /><strong>8.</strong> Select &ldquo;Send Claims&rdquo; button to upload file 35652668.clm<br /><strong>9.</strong> Verify text &ldquo;claim was received&rdquo; is present on page<br /><strong>10.</strong> Select &ldquo;Logout&rdquo; button<br /><strong>11.</strong> Select "OK" button on popup window<br /><strong>End</strong><span id="mce_102"></span></p></td>
+                    <td style="border: 1px solid #888888; vertical-align: top; width: 26.6289%; height: 406.25px;"><strong>TO:</strong> <br />James.Blythe@inovalon.com;<br />applicationoperationssupport@inovalon.com;<br />EligibilityWorkflow-Operations@inovalon.com;<br /><strong>CC:</strong><br /><span id="mce_117"></span> DataCenterOperations@inovalon.com;</td>
+                </tr>
+                <tr style="height: 22.3906px;">
+                    <td id="mcetoc_placeholder2" class="synthetic-title" style="border: 1px solid #888888; width: 105.906%; height: 22.3906px;" colspan="3">Provider CHOICE Claims Management Payer List API --- <a href="http://www.inovalon.com/payer-list">www.inovalon.com/payer-list</a><span id="mce_39"></span></td>
+                </tr>
+                <tr style="height: 188.734px;">
+                    <td style="border: 1px solid #888888; width: 29.2773%; height: 188.734px; vertical-align: top;"><strong>Provider CHOICE Claims Management Payer List API</strong><br />Location in DD:<br /><a href="https://app.datadoghq.com/synthetics/details/vu2-mfz-8a2?live=1h">https://app.datadoghq.com/synthetics/details/vu2-mfz-8a2?live=1h</a><hr style="border: 1px solid;" /><span id="mce_64"></span><a href="https://www.inovalon.com/payer-list/">https://www.inovalon.com/payer-list/</a><br />No credentials</td>
+                    <td style="border: 1px solid #888888; width: 50%; height: 188.734px; vertical-align: top;"><strong>Check for Maintenance</strong><p><strong>1.</strong> Check that navigation to site is successful&nbsp;<br /><strong>2.</strong> Page displays: Website<br /><br /></p></td>
+                    <td style="border: 1px solid #888888; width: 26.6289%; height: 188.734px; vertical-align: top;"><strong>TO:</strong><br />admin@visionshareinc.com;<br />James.Blythe@inovalon.com;<br />applicationoperationssupport@inovalon.com;<br /><strong>CC:</strong><br />Lauren.Moscato@inovalon.com;<br />Brett.Vargas@inovalon.com;<br />Carlos.Rodriguez1@inovalon.com;<br />Jim.Schlegelmilch@inovalon.com;<br />EligibilityWorkflow-Operations@inovalon.com;<br />DataCenterOperations@inovalon.com;</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+
+<!-- 
+    COPY AND PASTE THE BELOW CODE BLOCK ONTO A NEW LINE ANYWHERE BETWEEN THE <div class="container"> TAG AND THE FINAL </div> TAG TO ADD A NEW WHITE ORGANIZATION BOX 
+    
+    <div class="section">
+        <p>&lt;stuff goes here&gt;</p>
+    </div>
+-->
+
+<!--
+    COPY AND PASTE THE BELOW CODE BLOCK ONTO A NEW LINE ANYWHERE INSIDE OF A <div class="section"> ... </div> BLOCK TO ADD A GRAY SUB-BOX
+
+    <div class="flex">
+        <div class="item">
+            <p>&lt;stuff goes here&gt;</p>
+        </div>
+    </div>
+-->
+
+<!-- 
+    COPY AND PASTE THE BELOW CODE BLOCK ONTO A NEW LINE AFTER A <div class="item"> ... </div> BLOCK TO ADD MORE GRAY SUB-BOXES TO A WHITE ORGANIZATIONAL BOX
+
+    <div class="item">
+        <p>&lt;stuff goes here&gt;</p>
+    </div>
+-->
